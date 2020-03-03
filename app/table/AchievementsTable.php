@@ -1,8 +1,7 @@
 <?php
 namespace App\Table;
-use Core\Table;
 
-class AchievementsTable extends Table
+class AchievementsTable extends \Core\Table
 {
     public function get_cheevo_list($game_id)
     {

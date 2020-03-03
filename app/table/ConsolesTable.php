@@ -1,8 +1,7 @@
 <?php
 namespace App\Table;
-use Core\Table;
 
-class ConsolesTable extends Table
+class ConsolesTable extends \Core\Table
 {
     
 }

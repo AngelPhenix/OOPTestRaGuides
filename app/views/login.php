@@ -1,4 +1,5 @@
-<?php $title = "Authentification"; 
+<?php 
+$title = "Authentification"; 
 if($errors): ?>
 <div class="alert alert-danger">Identifiants Incorrects</div>
 <?php endif ?>

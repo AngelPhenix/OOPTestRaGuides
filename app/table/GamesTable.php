@@ -1,8 +1,7 @@
 <?php
 namespace App\Table;
-use Core\Table;
 
-class GamesTable extends Table
+class GamesTable extends \Core\Table
 {
     public function get_game_list($console)
     {

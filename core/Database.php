@@ -1,6 +1,5 @@
 <?php
 namespace Core;
-use \PDO;
 
 class Database 
 {
@@ -24,9 +23,9 @@ class Database
     {
         $req = $this->getPDO()->query($query);
         if(is_null($class_name)){
-            $req->setFetchMode(PDO::FETCH_OBJ);
+            $req->setFetchMode(\PDO::FETCH_OBJ);
         } else {
-            $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+            $req->setFetchMode(\PDO::FETCH_CLASS, $class_name);
         }
         $data = $req->fetchAll();
         return $data;
@@ -40,9 +39,9 @@ class Database
             return $result;
         }
         if(is_null($class_name)){
-            $req->setFetchMode(PDO::FETCH_OBJ);
+            $req->setFetchMode(\PDO::FETCH_OBJ);
         } else {
-            $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+            $req->setFetchMode(\PDO::FETCH_CLASS, $class_name);
         }
         if($one){
             $data = $req->fetch();
@@ -55,8 +54,8 @@ class Database
     private function getPDO()
     {
         if (null === $this->pdo) {
-            $pdo = new PDO('mysql:dbname=retroachievements;host=localhost', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo = new \PDO('mysql:dbname=retroachievements;host=localhost', 'root', '');
+            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
         }
         return $this->pdo;

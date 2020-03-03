@@ -1,13 +1,12 @@
 <?php
 namespace App\Controller;
-use Core\QueryBuilder;
 
 class DemoController extends AppController
 {   
     public function index()
     {
         require ROOT . '/Query.php';
-        $query = new QueryBuilder();
+        $query = new \Core\QueryBuilder();
         echo $query
             ->select('id', 'title', 'console')
             ->from('consoles')

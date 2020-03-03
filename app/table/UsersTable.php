@@ -1,8 +1,7 @@
 <?php
 namespace App\Table;
-Use Core\Table;
 
-class UsersTable extends Table
+class UsersTable extends \Core\Table
 {
     public function get_by_id($user_id)
     {

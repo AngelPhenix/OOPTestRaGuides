@@ -1,8 +1,5 @@
 <?php
 
-use Core\Config;
-use Core\Database;
-
 class App
 {
     public $title = "Retroachievements";
@@ -24,9 +21,9 @@ class App
 
     public function getDB()
     {
-        $config = Config::getInstance(ROOT . '/config/config.php');
+        $config = Core\Config::getInstance(ROOT . '/config/config.php');
         if(is_null($this->db_instance)){
-            $this->db_instance = new Database($config->get('db_name'), $config->get('db_host'), $config->get('db_charset'), $config->get('db_user'), $config->get('db_pass'));
+            $this->db_instance = new Core\Database($config->get('db_name'), $config->get('db_host'), $config->get('db_charset'), $config->get('db_user'), $config->get('db_pass'));
         }
         return $this->db_instance;
     }
